@@ -17,11 +17,12 @@ function App() {
   const loginHandler = (email, password) => {
     // We should of course check email and password
     // But it's just a dummy/ demo anyways
-    setLocalStorage('userInfo',{email: email, password: password,userInfo:1})
+    localStorage.setItem('peronInfo',JSON.stringify({'email': email, 'password': password, 'isLoggedIn':1}))
     setIsLoggedIn(true);
   };
 
   const logoutHandler = () => {
+    localStorage.removeItem('peronInfo')
     setIsLoggedIn(false);
   };
 
